@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaAlterarAluno.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaAlterarCurso.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaExcluirCurso.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaExlcuirAluno.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaIncluirAluno.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaIncluirCurso.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Janelas/JanelaPrincipal.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/Main.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/bd/BDSQLServer.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/bd/core/MeuPreparedStatement.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/bd/core/MeuResultSet.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/bd/core/MeuStatement.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/bd/daos/Alunos.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/bd/daos/Cursos.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/bd/dbos/Aluno.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/bd/dbos/Curso.java" charset="ISO-8859-1" />
+  </component>
+</project>

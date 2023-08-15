@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Projeto 2 com tabela">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Ferramentas.jar!/" />
+      <root url="jar://$PROJECT_DIR$/sqljdbc4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

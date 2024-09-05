@@ -1,6 +1,5 @@
 package Janelas;
 
-import Utilitarios.Data;
 import bd.daos.Alunos;
 import bd.dbos.Aluno;
 
@@ -12,24 +11,24 @@ import java.text.ParseException;
 
 public class JanelaAlterarAluno extends JFrame implements ActionListener {
     protected JLabel lblRa = new JLabel("RA do aluno: ");
-    protected JLabel lblPNome           = new JLabel("Nome: ");
-    protected JLabel lblSobrenome       = new JLabel("Sobrenome: ");
-    protected JLabel lblEndereco        = new JLabel("Endereço: ");
-    protected JLabel lblDtNascimento    = new JLabel("Data de nascimento: ");
+    protected JLabel lblPNome = new JLabel("Nome: ");
+    protected JLabel lblSobrenome = new JLabel("Sobrenome: ");
+    protected JLabel lblEndereco = new JLabel("Endereï¿½o: ");
+    protected JLabel lblDtNascimento = new JLabel("Data de nascimento: ");
 
-    protected  JFormattedTextField txtRa            = new JFormattedTextField();
-    protected JTextField txtNome                    = new JTextField();
-    protected JTextField txtSobrenome               = new JTextField();
-    protected JTextField txtEndereco                = new JTextField();
-    protected JFormattedTextField txtdtNascimento   = new JFormattedTextField();
+    protected JFormattedTextField txtRa = new JFormattedTextField();
+    protected JTextField txtNome = new JTextField();
+    protected JTextField txtSobrenome = new JTextField();
+    protected JTextField txtEndereco = new JTextField();
+    protected JFormattedTextField txtdtNascimento = new JFormattedTextField();
 
 
-    protected JButton btnAlterar    = new JButton("Alterar aluno");
-    protected JButton btnVoltar     = new JButton("Voltar");
+    protected JButton btnAlterar = new JButton("Alterar aluno");
+    protected JButton btnVoltar = new JButton("Voltar");
 
     protected JFrame frame = new JFrame();
 
-    public JanelaAlterarAluno(){
+    public JanelaAlterarAluno() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setSize(460, 230);
         frame.setLayout(null);
@@ -70,57 +69,52 @@ public class JanelaAlterarAluno extends JFrame implements ActionListener {
         frame.add(btnVoltar);
     }
 
-    public void FormatoRA(){
-        try{
+    public void FormatoRA() {
+        try {
             MaskFormatter ra = new MaskFormatter("#####");
             ra.install(txtRa);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de RA !!");
         }
     }
 
-    public void FormatoDataNasc(){
+    public void FormatoDataNasc() {
         try {
             MaskFormatter d = new MaskFormatter("##/##/####");
             d.install(txtdtNascimento);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de data !!");
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnAlterar){
+        if (e.getSource() == btnAlterar) {
             try {
-                if(txtRa.getText().equals("     "))
-                    throw new Exception("Ra não fornecido !!");
+                if (txtRa.getText().equals("     "))
+                    throw new Exception("Ra nï¿½o fornecido !!");
                 Aluno a = new Aluno(Alunos.getAluno(Integer.parseInt(txtRa.getText())));
-                if (txtNome.getText().equals("")){
-                }
-                else{
+                if (txtNome.getText().equals("")) {
+                } else {
                     a.setPrimeiroNome(txtNome.getText());
                 }
-                if (txtSobrenome.getText().equals("")){
-                }
-                else{
+                if (txtSobrenome.getText().equals("")) {
+                } else {
                     a.setUltimoNome(txtSobrenome.getText());
                 }
-                if (txtEndereco.getText().equals("")){
-                }
-                else{
+                if (txtEndereco.getText().equals("")) {
+                } else {
                     a.setEndereco(txtEndereco.getText());
                 }
-                if (txtdtNascimento.getText().equals("  /  /    ")){
-                }
-                else {
+                if (txtdtNascimento.getText().equals("  /  /    ")) {
+                } else {
                     a.setDatNascimento(txtdtNascimento.getText());
                 }
                 Alunos.alterar(a);
-            }catch (Exception erro){
+            } catch (Exception erro) {
                 JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        } else
-            if (e.getSource() == btnVoltar) {
+        } else if (e.getSource() == btnVoltar) {
             JanelaPrincipal jp = new JanelaPrincipal();
             frame.dispose();
         }

@@ -14,7 +14,7 @@ public class BDSQLServer {
                                                "jdbc:sqlserver://regulus.cotuca.unicamp.br:1433;databasename=BD22333",
                                                "BD22333", "BD22333");
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Problemas de conexão com o banco de dados !!");
+            JOptionPane.showMessageDialog(null, "Problemas de conex?o com o banco de dados !!");
             System.exit(0);
         }
         COMANDO = comando;

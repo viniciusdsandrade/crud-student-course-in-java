@@ -4,8 +4,6 @@ import Tabelas.ModeloTabela;
 import bd.core.MeuResultSet;
 import bd.daos.Alunos;
 import bd.daos.Cursos;
-import bd.dbos.Aluno;
-import com.sun.jdi.IntegerType;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -16,30 +14,30 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 public class JanelaPrincipal extends JFrame implements ActionListener {
-    protected JButton   btnIncluirA      = new JButton("Incluir Aluno"),
-                        btnAlterarA       = new JButton("Alterar Aluno"),
-                        btnExlcuirA      = new JButton("Excluir Aluno"),
-                        btnIncluirC      = new JButton("Incluir Curso"),
-                        btnAlterarC       = new JButton("Alterar Curso"),
-                        btnExcluirC      = new JButton("Excluir Curso"),
-                        btnBuscarA       = new JButton("Buscar Aluno"),
-                        btnBuscarC       = new JButton("Buscar Curso"),
-                        btnBuscarAs       = new JButton("Buscar Alunos"),
-                        btnBuscarCs       = new JButton("Buscar Cursos");
+    protected JButton btnIncluirA = new JButton("Incluir Aluno"),
+            btnAlterarA = new JButton("Alterar Aluno"),
+            btnExlcuirA = new JButton("Excluir Aluno"),
+            btnIncluirC = new JButton("Incluir Curso"),
+            btnAlterarC = new JButton("Alterar Curso"),
+            btnExcluirC = new JButton("Excluir Curso"),
+            btnBuscarA = new JButton("Buscar Aluno"),
+            btnBuscarC = new JButton("Buscar Curso"),
+            btnBuscarAs = new JButton("Buscar Alunos"),
+            btnBuscarCs = new JButton("Buscar Cursos");
     JFrame frame = new JFrame();
     JScrollPane jsp;
 
-    protected JLabel    A = new JLabel("Aluno"),
-                        C = new JLabel("Curso"),
-                        Ra = new JLabel("Ra do aluno:"),
-                        idC = new JLabel("Id do curso:");
+    protected JLabel A = new JLabel("Aluno"),
+            C = new JLabel("Curso"),
+            Ra = new JLabel("Ra do aluno:"),
+            idC = new JLabel("Id do curso:");
 
     protected JFormattedTextField txtRa = new JFormattedTextField(),
-                                  txtIdC = new JFormattedTextField();
+            txtIdC = new JFormattedTextField();
 
     protected JTable tab = new JTable();
 
-    public JanelaPrincipal(){
+    public JanelaPrincipal() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setTitle("Manipulador de banco de dados");
         frame.setSize(570, 510);
@@ -60,7 +58,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
         btnAlterarA.addActionListener(this);
         frame.add(btnAlterarA);
 
-        btnExlcuirA.setBounds( 275, 50, 110, 30);
+        btnExlcuirA.setBounds(275, 50, 110, 30);
         btnExlcuirA.setFocusable(false);
         btnExlcuirA.addActionListener(this);
         frame.add(btnExlcuirA);
@@ -121,18 +119,18 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
 
     }
 
-    public void preencherTabA(MeuResultSet SQL){
-        ArrayList dados = new ArrayList<>();
+    public void preencherTabA(MeuResultSet SQL) {
+        ArrayList<Object> dados = new ArrayList<>();
 
         String[] colunas = new String[]{"RA", "Curso", "Nome", "Sobrenome", "RG", "Data de nascimento", "Endereço"};
-        try{
+        try {
             SQL.first();
-            do{
+            do {
                 dados.add(new Object[]{SQL.getInt("RA"), SQL.getInt("Curso"), SQL.getString("PrimeiroNome"),
-                                       SQL.getString("UltimoNome"), SQL.getString("RG"), SQL.getString("DataNascimento"),
-                                       SQL.getString("Endereco")});
-            }while (SQL.next());
-        }catch (SQLException erro){
+                        SQL.getString("UltimoNome"), SQL.getString("RG"), SQL.getString("DataNascimento"),
+                        SQL.getString("Endereco")});
+            } while (SQL.next());
+        } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao preencher a tabela !!");
         }
 
@@ -152,21 +150,21 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
         tab.getColumnModel().getColumn(5).setResizable(false);
         tab.getColumnModel().getColumn(6).setPreferredWidth(260);
         tab.getTableHeader().setReorderingAllowed(false);
-        tab.setAutoResizeMode(tab.AUTO_RESIZE_OFF);
+        tab.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tab.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
-    public void preencherTabC(MeuResultSet SQL){
+    public void preencherTabC(MeuResultSet SQL) {
         ArrayList<Object> dados = new ArrayList<>();
 
         String[] colunas = new String[]{"ID", "Nome do curso"};
 
-        try{
+        try {
             SQL.first();
             do {
                 dados.add(new Object[]{SQL.getInt("idCurso"), SQL.getString("nome")});
-            }while (SQL.next());
-        }catch (SQLException erro){
+            } while (SQL.next());
+        } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao preencher a tabela !!");
         }
         ModeloTabela modelo = new ModeloTabela(dados, colunas);
@@ -179,91 +177,73 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
         tab.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
-    public void FormatoIdCurso(){
-        try{
+    public void FormatoIdCurso() {
+        try {
             MaskFormatter d = new MaskFormatter("###");
             d.install(txtIdC);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de id do curso !!");
         }
     }
 
-    public void FormatoRA(){
-        try{
+    public void FormatoRA() {
+        try {
             MaskFormatter ra = new MaskFormatter("#####");
             ra.install(txtRa);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de RA !!");
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnIncluirA){
+        if (e.getSource() == btnIncluirA) {
             JanelaIncluirAluno jia = new JanelaIncluirAluno();
             frame.dispose();
-        }
-        else
-            if (e.getSource() == btnIncluirC) {
-                JanelaIncluirCurso jic = new JanelaIncluirCurso();
-                frame.dispose();
-            }
-        else
-            if (e.getSource() == btnAlterarA) {
-                JanelaAlterarAluno jaa = new JanelaAlterarAluno();
-                frame.dispose();
-            }
-        else
-            if (e.getSource() == btnAlterarC) {
-                JanelaAlterarCurso jac = new JanelaAlterarCurso();
-                frame.dispose();
-            }
-        else
-            if(e.getSource() == btnExlcuirA){
-                JanelaExlcuirAluno jea = new JanelaExlcuirAluno();
-                frame.dispose();
-            }
-        else
-            if(e.getSource() == btnExcluirC){
-                JanelaExcluirCurso jec = new JanelaExcluirCurso();
-                frame.dispose();
-            }
-        else
-            if (e.getSource() == btnBuscarA) {
-                try {
-                    if(txtRa.getText().equals("     "))
-                        throw new Exception("Ra não fornecido !!");
+        } else if (e.getSource() == btnIncluirC) {
+            JanelaIncluirCurso jic = new JanelaIncluirCurso();
+            frame.dispose();
+        } else if (e.getSource() == btnAlterarA) {
+            JanelaAlterarAluno jaa = new JanelaAlterarAluno();
+            frame.dispose();
+        } else if (e.getSource() == btnAlterarC) {
+            JanelaAlterarCurso jac = new JanelaAlterarCurso();
+            frame.dispose();
+        } else if (e.getSource() == btnExlcuirA) {
+            JanelaExlcuirAluno jea = new JanelaExlcuirAluno();
+            frame.dispose();
+        } else if (e.getSource() == btnExcluirC) {
+            JanelaExcluirCurso jec = new JanelaExcluirCurso();
+            frame.dispose();
+        } else if (e.getSource() == btnBuscarA) {
+            try {
+                if (txtRa.getText().equals("     "))
+                    throw new Exception("Ra não fornecido !!");
 
-                    preencherTabA(Alunos.getAlunoRS(Integer.parseInt(txtRa.getText())));
-                }catch (Exception erro){
-                    JOptionPane.showMessageDialog(null, erro.getMessage());
-                }
+                preencherTabA(Alunos.getAlunoRS(Integer.parseInt(txtRa.getText())));
+            } catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        else
-            if (e.getSource() == btnBuscarC){
-                try{
-                    if(txtIdC.getText().equals("   "))
-                        throw new Exception("Id do curso não fornecido !!");
-                    preencherTabC(Cursos.getCursoRS(Integer.parseInt(txtIdC.getText())));
-                }catch (Exception erro){
-                    JOptionPane.showMessageDialog(null, erro.getMessage());
-                }
+        } else if (e.getSource() == btnBuscarC) {
+            try {
+                if (txtIdC.getText().equals("   "))
+                    throw new Exception("Id do curso não fornecido !!");
+                preencherTabC(Cursos.getCursoRS(Integer.parseInt(txtIdC.getText())));
+            } catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        else
-            if(e.getSource() == btnBuscarAs){
-                try {
-                    preencherTabA(Alunos.getAlunos());
-                }catch (Exception erro){
-                    JOptionPane.showMessageDialog(null, erro.getMessage());
-                }
+        } else if (e.getSource() == btnBuscarAs) {
+            try {
+                preencherTabA(Alunos.getAlunos());
+            } catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        else
-            if(e.getSource() == btnBuscarCs){
-                try {
-                    preencherTabC(Cursos.getCursos());
-                }catch (Exception erro){
-                    JOptionPane.showMessageDialog(null, erro.getMessage());
-                }
+        } else if (e.getSource() == btnBuscarCs) {
+            try {
+                preencherTabC(Cursos.getCursos());
+            } catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, erro.getMessage());
             }
+        }
     }
 }

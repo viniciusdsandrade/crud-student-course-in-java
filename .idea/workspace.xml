@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64b9c661-4b06-4ca0-b468-68474dc14e9a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Tabalho_2/.idea/git_toolbox_blame.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tabalho_2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tabalho_2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaAlterarAluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaAlterarAluno.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaAlterarCurso.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaAlterarCurso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaExcluirCurso.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaExcluirCurso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaExlcuirAluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaExlcuirAluno.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaIncluirAluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaIncluirAluno.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaIncluirCurso.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaIncluirCurso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/Janelas/JanelaPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/BDSQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/BDSQLServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/core/MeuPreparedStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/core/MeuPreparedStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/core/MeuResultSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/core/MeuResultSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/core/MeuStatement.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/core/MeuStatement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/daos/Alunos.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/daos/Alunos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/daos/Cursos.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/daos/Cursos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/dbos/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/dbos/Aluno.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/dbos/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/out/production/Tabalho_2/bd/dbos/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaAlterarAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaAlterarAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaAlterarCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaAlterarCurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaExcluirCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaExcluirCurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaExlcuirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaExlcuirAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaIncluirAluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaIncluirAluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaIncluirCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaIncluirCurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Janelas/JanelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/Tabelas/ModeloTabela.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/Tabelas/ModeloTabela.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/BDSQLServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/BDSQLServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/core/MeuPreparedStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/core/MeuPreparedStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/core/MeuResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/core/MeuResultSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/core/MeuStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/core/MeuStatement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/daos/Alunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/daos/Alunos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/daos/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/daos/Cursos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/dbos/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/dbos/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tabalho_2/src/bd/dbos/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tabalho_2/src/bd/dbos/Curso.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;viniciusdsandrade&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/viniciusdsandrade/crud-student-course-in-java&quot;,
+    &quot;accountId&quot;: &quot;28e3c90e-dd11-46e9-a6bf-3b898331966c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2lfA8jjm9vvlb4OFUaxDXNd67rL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pichau/Desktop/crud-student-course-in-java/Tabalho_2&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64b9c661-4b06-4ca0-b468-68474dc14e9a" name="Changes" comment="" />
+      <created>1725560600662</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725560600662</updated>
+      <workItem from="1725560601707" duration="36000" />
+      <workItem from="1725561673933" duration="54000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

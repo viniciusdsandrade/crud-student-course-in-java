@@ -10,27 +10,27 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class JanelaIncluirCurso extends JFrame implements ActionListener {
-    protected JButton btnCadastrar  = new JButton("Cadastrar curso"),
-                      btnVoltar     = new JButton("Voltar");
+    protected JButton btnCadastrar = new JButton("Cadastrar curso"),
+            btnVoltar = new JButton("Voltar");
 
-    protected JLabel lblIdC     = new JLabel("Id do curso: "),
-                     lblNome    = new JLabel("Nome do curso: ");
+    protected JLabel lblIdC = new JLabel("Id do curso: "),
+            lblNome = new JLabel("Nome do curso: ");
 
     protected JFormattedTextField txtIdC = new JFormattedTextField();
     protected JTextField txtNome = new JTextField();
 
     JFrame frame = new JFrame();
 
-    public void FormatoIdCurso(){
-        try{
+    public void FormatoIdCurso() {
+        try {
             MaskFormatter d = new MaskFormatter("###");
             d.install(txtIdC);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de id do curso !!");
         }
     }
 
-    public JanelaIncluirCurso(){
+    public JanelaIncluirCurso() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setTitle("Incluir Curso");
         frame.setSize(470, 150);
@@ -62,16 +62,15 @@ public class JanelaIncluirCurso extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnCadastrar){
+        if (e.getSource() == btnCadastrar) {
             try {
                 Cursos.incluir(new Curso(Integer.parseInt(txtIdC.getText()), txtNome.getText()));
-            }catch (Exception erro){
-                JOptionPane.showMessageDialog(null, "Não foi possível incluir o curso !!");
+            } catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, "Nï¿½o foi possï¿½vel incluir o curso !!");
             }
-        } else
-            if (e.getSource() == btnVoltar) {
-                JanelaPrincipal jp = new JanelaPrincipal();
-                frame.dispose();
+        } else if (e.getSource() == btnVoltar) {
+            JanelaPrincipal jp = new JanelaPrincipal();
+            frame.dispose();
         }
     }
 

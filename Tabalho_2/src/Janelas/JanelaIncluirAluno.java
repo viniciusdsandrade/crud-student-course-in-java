@@ -7,7 +7,6 @@ import javax.swing.*;
 import javax.swing.text.MaskFormatter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 import java.text.ParseException;
 
 public class JanelaIncluirAluno extends JFrame implements ActionListener {
@@ -15,55 +14,56 @@ public class JanelaIncluirAluno extends JFrame implements ActionListener {
     protected JButton btnCadastrar = new JButton("Cadastrar Aluno");
     protected JButton btnVoltar = new JButton("Voltar");
 
-    protected  JFormattedTextField txtRA            = new JFormattedTextField();
-    protected  JFormattedTextField txtCurso         = new JFormattedTextField();
-    protected  JTextField txtPNome                  = new JTextField();
-    protected  JTextField txtUNome                  = new JTextField();
-    protected  JFormattedTextField txtRG            = new JFormattedTextField();
-    protected  JFormattedTextField txtDtNascimento  = new JFormattedTextField();
-    protected  JTextField txtEndereco               = new JTextField();
+    protected JFormattedTextField txtRA = new JFormattedTextField();
+    protected JFormattedTextField txtCurso = new JFormattedTextField();
+    protected JTextField txtPNome = new JTextField();
+    protected JTextField txtUNome = new JTextField();
+    protected JFormattedTextField txtRG = new JFormattedTextField();
+    protected JFormattedTextField txtDtNascimento = new JFormattedTextField();
+    protected JTextField txtEndereco = new JTextField();
 
-    protected JLabel lblRA              = new JLabel("RA: ");
-    protected JLabel lblCurso           = new JLabel("Curso: ");
-    protected JLabel lblPNome           = new JLabel("Nome: ");
-    protected JLabel lblUNome           = new JLabel("Sobrenome: ");
-    protected JLabel lblRG              = new JLabel("RG: ");
-    protected JLabel lblDtNascimento    = new JLabel("Data de nascimento: ");
-    protected JLabel lblEndereco        = new JLabel("Endereço: ");
+    protected JLabel lblRA = new JLabel("RA: ");
+    protected JLabel lblCurso = new JLabel("Curso: ");
+    protected JLabel lblPNome = new JLabel("Nome: ");
+    protected JLabel lblUNome = new JLabel("Sobrenome: ");
+    protected JLabel lblRG = new JLabel("RG: ");
+    protected JLabel lblDtNascimento = new JLabel("Data de nascimento: ");
+    protected JLabel lblEndereco = new JLabel("Endereï¿½o: ");
 
     JFrame frame = new JFrame();
 
-    public void FormatoDataNasc(){
+    public void FormatoDataNasc() {
         try {
             MaskFormatter d = new MaskFormatter("##/##/####");
             d.install(txtDtNascimento);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de data !!");
         }
     }
 
-    public void FormatoRA(){
-        try{
+    public void FormatoRA() {
+        try {
             MaskFormatter ra = new MaskFormatter("#####");
             ra.install(txtRA);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de RA !!");
         }
     }
 
-    public void FormatoRG(){
-        try{
+    public void FormatoRG() {
+        try {
             MaskFormatter rg = new MaskFormatter("##.###.###-##");
             rg.install(txtRG);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de RG !!");
         }
     }
-    public void FormatoIdCurso(){
-        try{
+
+    public void FormatoIdCurso() {
+        try {
             MaskFormatter d = new MaskFormatter("###");
             d.install(txtCurso);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de id do curso !!");
         }
     }
@@ -129,30 +129,29 @@ public class JanelaIncluirAluno extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
-        if(e.getSource() == btnCadastrar){
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnCadastrar) {
             try {
-                if(txtRA.getText().equals("     "))
+                if (txtRA.getText().equals("     "))
                     throw new Exception("Campo de RA em branco !!");
-                if(txtCurso.getText().equals("   "))
+                if (txtCurso.getText().equals("   "))
                     throw new Exception("Campo de Curso em branco !!");
-                if(txtPNome.getText().equals(""))
+                if (txtPNome.getText().isEmpty())
                     throw new Exception("Campo de Nome em branco !!");
-                if(txtUNome.getText().equals(""))
+                if (txtUNome.getText().isEmpty())
                     throw new Exception("Campo de Sobrenome em branco !!");
                 if (txtRG.getText().equals("  .   .   -  "))
                     throw new Exception("Campo de RG em branco !!");
-                if(txtDtNascimento.getText().equals("  /  /    "))
+                if (txtDtNascimento.getText().equals("  /  /    "))
                     throw new Exception("Campo de Data de nascimento em branco !!");
-                if (txtEndereco.getText().equals(""))
-                    throw new Exception("Campo de Endereço em branco !!");
+                if (txtEndereco.getText().isEmpty())
+                    throw new Exception("Campo de Endereï¿½o em branco !!");
                 Alunos.incluir(new Aluno(Integer.parseInt(txtRA.getText()), Integer.parseInt(txtCurso.getText()), txtPNome.getText(),
                         txtUNome.getText(), txtRG.getText(), txtDtNascimento.getText(), txtEndereco.getText()));
-            }catch (Exception erro){
+            } catch (Exception erro) {
                 JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        } else
-            if (e.getSource() == btnVoltar) {
+        } else if (e.getSource() == btnVoltar) {
             JanelaPrincipal jp = new JanelaPrincipal();
             frame.dispose();
         }

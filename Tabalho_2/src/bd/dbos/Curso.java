@@ -1,39 +1,37 @@
 package bd.dbos;
 
-public class Curso implements Cloneable{
-    private int     idCurso;
-    private String  nome;
+import java.util.Objects;
 
-    public void setIdCurso(int idC) throws Exception{
-        if(idC <= 0){
-            throw new Exception("Curso inv�lido !!");
-        }
+public class Curso implements Cloneable {
 
+    private int idCurso;
+    private String nome;
+
+    public void setIdCurso(int idC) throws Exception {
+        if (idC <= 0) throw new Exception("Curso inv�lido !!");
         this.idCurso = idC;
     }
 
-    public void  setNome(String n) throws Exception{
-        if(n == null || n.equals(""))
-            throw new Exception("Nome inv�lido !!");
-
+    public void setNome(String n) throws Exception {
+        if (n == null || n.isEmpty()) throw new Exception("Nome inv�lido !!");
         this.nome = n;
     }
 
-    public int getIdCurso(){
+    public int getIdCurso() {
         return this.idCurso;
     }
 
-    public String getNome(){
+    public String getNome() {
         return this.nome;
     }
 
-    public Curso(int idC, String n) throws Exception{
+    public Curso(int idC, String n) throws Exception {
         this.setIdCurso(idC);
         this.setNome(n);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String ret = "";
 
         ret += "ID do curso: " + this.idCurso + "\n";
@@ -43,47 +41,42 @@ public class Curso implements Cloneable{
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if(!(obj instanceof Curso))
-            return false;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
 
-        Curso c = (Curso) obj;
+        Curso that = (Curso) obj;
 
-        if(this.idCurso != c.idCurso)
-            return false;
-        if(this.nome != c.nome)
-            return false;
-
-        return true;
+        if (this.idCurso != that.idCurso) return false;
+        return Objects.equals(this.nome, that.nome);
     }
 
     @Override
-    public int hashCode(){
-        int ret = 9;
+    public int hashCode() {
+        final int prime = 31;
+        int hash = 9;
 
-        ret = ret*11 +  Integer.valueOf(this.idCurso);
-        ret = ret*11 + this.nome.hashCode();
+        hash *= prime + this.idCurso;
+        hash *= prime + this.nome.hashCode();
 
-        return ret;
+        return hash;
     }
 
-    public Curso (Curso modelo) throws Exception{
-        if(modelo == null)
+    public Curso(Curso modelo) throws Exception {
+        if (modelo == null)
             throw new Exception("Objeto ausente !!");
         this.idCurso = modelo.idCurso;
         this.nome = modelo.nome;
     }
 
-    public Object clone(){
+    @Override
+    public Object clone() {
         Curso ret = null;
         try {
             ret = new Curso(this);
-        }catch (Exception e){}
-
+        } catch (Exception ignored) {
+        }
         return ret;
     }
 }

@@ -10,18 +10,18 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class JanelaAlterarCurso extends JFrame implements ActionListener {
-    protected JLabel lblCurso   = new JLabel("Id do curso: ");
-    protected JLabel lblNome    = new JLabel("Nome: ");
+    protected JLabel lblCurso = new JLabel("Id do curso: ");
+    protected JLabel lblNome = new JLabel("Nome: ");
 
-    protected JTextField txtNome            = new JTextField();
-    protected JFormattedTextField txtCurso  = new JFormattedTextField();
+    protected JTextField txtNome = new JTextField();
+    protected JFormattedTextField txtCurso = new JFormattedTextField();
 
-    protected JButton btnAlterar    = new JButton("Alterar curso");
-    protected JButton btnVoltar     = new JButton("Voltar");
+    protected JButton btnAlterar = new JButton("Alterar curso");
+    protected JButton btnVoltar = new JButton("Voltar");
 
     protected JFrame frame = new JFrame();
 
-    public JanelaAlterarCurso(){
+    public JanelaAlterarCurso() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setSize(350, 150);
         frame.setLayout(null);
@@ -48,34 +48,33 @@ public class JanelaAlterarCurso extends JFrame implements ActionListener {
         frame.add(btnVoltar);
     }
 
-    public void FormatoIdCurso(){
-        try{
+    public void FormatoIdCurso() {
+        try {
             MaskFormatter d = new MaskFormatter("###");
             d.install(txtCurso);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de id do curso !!");
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnAlterar) {
+        if (e.getSource() == btnAlterar) {
             try {
-                if(txtCurso.getText().equals("   "))
-                    throw new Exception("Id do curso não fornecido !!");
+                if (txtCurso.getText().equals("   "))
+                    throw new Exception("Id do curso nï¿½o fornecido !!");
                 Curso c = new Curso(Cursos.getCurso(Integer.parseInt(txtCurso.getText())));
-                if(txtNome.getText().equals("")){}
-                else {
+                if (txtNome.getText().isEmpty()) {
+                } else {
                     c.setNome(txtNome.getText());
                 }
                 Cursos.alterar(c);
-            }catch (Exception erro){
+            } catch (Exception erro) {
                 JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        } else
-            if (e.getSource() == btnVoltar) {
-                JanelaPrincipal jp = new JanelaPrincipal();
-                frame.dispose();
+        } else if (e.getSource() == btnVoltar) {
+            JanelaPrincipal jp = new JanelaPrincipal();
+            frame.dispose();
         }
     }
 }

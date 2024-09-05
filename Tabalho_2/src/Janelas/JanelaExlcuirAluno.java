@@ -1,7 +1,6 @@
 package Janelas;
 
 import bd.daos.Alunos;
-import bd.daos.Cursos;
 
 import javax.swing.*;
 import javax.swing.text.MaskFormatter;
@@ -11,16 +10,16 @@ import java.text.ParseException;
 
 public class JanelaExlcuirAluno extends JFrame implements ActionListener {
 
-    protected JLabel lblRa      = new JLabel("RA do aluno: ");
+    protected JLabel lblRa = new JLabel("RA do aluno: ");
 
-    protected JFormattedTextField txtRa     = new JFormattedTextField();
+    protected JFormattedTextField txtRa = new JFormattedTextField();
 
-    protected JButton btnExcluir    = new JButton("Excluir aluno");
-    protected JButton btnVoltar     = new JButton("Voltar");
+    protected JButton btnExcluir = new JButton("Excluir aluno");
+    protected JButton btnVoltar = new JButton("Voltar");
 
     protected JFrame frame = new JFrame();
 
-    public JanelaExlcuirAluno(){
+    public JanelaExlcuirAluno() {
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setTitle("Excluir aluno");
@@ -44,29 +43,28 @@ public class JanelaExlcuirAluno extends JFrame implements ActionListener {
         frame.add(btnVoltar);
     }
 
-    public void FormatoRA(){
-        try{
+    public void FormatoRA() {
+        try {
             MaskFormatter ra = new MaskFormatter("#####");
             ra.install(txtRa);
-        }catch (ParseException erro){
+        } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro ao formatar campo de RA !!");
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnExcluir){
+        if (e.getSource() == btnExcluir) {
             try {
-                if(txtRa.getText().equals("     "))
-                    throw new Exception("Ra não fornecido !!");
+                if (txtRa.getText().equals("     "))
+                    throw new Exception("Ra nï¿½o fornecido !!");
                 Alunos.excluir(Integer.parseInt(txtRa.getText()));
-            }catch (Exception erro){
+            } catch (Exception erro) {
                 JOptionPane.showMessageDialog(null, erro.getMessage());
             }
-        }else
-            if(e.getSource() == btnVoltar){
-                JanelaPrincipal jp = new JanelaPrincipal();
-                frame.dispose();
-            }
+        } else if (e.getSource() == btnVoltar) {
+            JanelaPrincipal jp = new JanelaPrincipal();
+            frame.dispose();
+        }
     }
 }
